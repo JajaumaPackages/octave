@@ -21,7 +21,7 @@
 Name:           octave
 Epoch:          6
 Version:        4.2.1
-Release:        4%{?rcver:.rc%{rcver}}%{?dist}.5
+Release:        4%{?rcver:.rc%{rcver}}%{?dist}.6
 Summary:        A high-level language for numerical computations
 Group:          Applications/Engineering
 License:        GPLv3+
@@ -100,7 +100,6 @@ BuildRequires:  mesa-libGLU-devel
 BuildRequires:  mesa-libOSMesa-devel
 BuildRequires:  ncurses-devel
 BuildRequires:  pcre-devel
-BuildRequires:  portaudio-devel
 BuildRequires:  qhull-devel
 BuildRequires:  qrupdate-devel
 %if %{with qt5}
@@ -435,6 +434,10 @@ fi
 %{_docdir}/%{name}/refcard*.pdf
 
 %changelog
+* Fri Feb 09 2018 Jajauma's Packages <jajauma@yandex.ru> - 6:4.2.1-4.6
+- Don't use broken _pkgdocdir on RHEL
+- Disable portaudio support (for now)
+
 * Thu Feb 08 2018 Jitka Plesnikova <jplesnik@redhat.com> - 6:4.2.1-4.5
 - Rebuild for hdf5 1.8.20
 
