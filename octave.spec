@@ -132,7 +132,6 @@ BuildRequires:  zip
 Requires:       epstool
 Requires:       gnuplot
 Requires:       gnuplot-common
-Requires:       hdf5 = %{_hdf5_version}
 Requires:       java-headless
 Requires:       less
 Requires:       info
@@ -437,6 +436,7 @@ fi
 * Fri Feb 09 2018 Jajauma's Packages <jajauma@yandex.ru> - 6:4.2.1-4.6
 - Don't use broken _pkgdocdir on RHEL
 - Disable portaudio support (for now)
+- Omit explicit hdf5 dependency
 
 * Thu Feb 08 2018 Jitka Plesnikova <jplesnik@redhat.com> - 6:4.2.1-4.5
 - Rebuild for hdf5 1.8.20
