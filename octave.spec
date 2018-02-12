@@ -21,7 +21,7 @@
 Name:           octave
 Epoch:          6
 Version:        4.2.1
-Release:        4%{?rcver:.rc%{rcver}}%{?dist}.7
+Release:        5%{?rcver:.rc%{rcver}}%{?dist}
 Summary:        A high-level language for numerical computations
 Group:          Applications/Engineering
 License:        GPLv3+
@@ -448,8 +448,9 @@ fi
 %{_docdir}/%{name}/refcard*.pdf
 
 %changelog
-* Mon Feb 12 2018 Jajauma's Packages <jajauma@yandex.ru> - 6:4.2.1-4.7
+* Mon Feb 12 2018 Jajauma's Packages <jajauma@yandex.ru> - 6:4.2.1-5
 - Add more dependencies to octave-devel
+- Bump Release
 
 * Fri Feb 09 2018 Jajauma's Packages <jajauma@yandex.ru> - 6:4.2.1-4.6
 - Don't use broken _pkgdocdir on RHEL
