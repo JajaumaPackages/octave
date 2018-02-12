@@ -21,7 +21,7 @@
 Name:           octave
 Epoch:          6
 Version:        4.2.1
-Release:        4%{?rcver:.rc%{rcver}}%{?dist}.6
+Release:        4%{?rcver:.rc%{rcver}}%{?dist}.7
 Summary:        A high-level language for numerical computations
 Group:          Applications/Engineering
 License:        GPLv3+
@@ -176,8 +176,23 @@ C++, C, Fortran, or other languages.
 Summary:        Development headers and files for Octave
 Group:          Development/Libraries
 Requires:       %{name} = %{epoch}:%{version}-%{release}
-Requires:       readline-devel fftw-devel hdf5-devel zlib-devel
-Requires:       gcc-c++ gcc-gfortran
+Requires:       GraphicsMagick-c++-devel
+Requires:       arpack-devel
+Requires:       curl-devel
+Requires:       fftw-devel
+Requires:       fontconfig-devel
+Requires:       freetype-devel
+Requires:       gcc-c++
+Requires:       gcc-gfortran
+Requires:       gl2ps-devel
+Requires:       hdf5-devel
+Requires:       mesa-libGL-devel
+Requires:       mesa-libGLU-devel
+Requires:       ncurses-devel
+Requires:       qrupdate-devel
+Requires:       readline-devel
+Requires:       suitesparse-devel
+Requires:       zlib-devel
 %if 0%{?fedora} >= 27
 Requires:       openblas-devel
 %else
@@ -433,6 +448,9 @@ fi
 %{_docdir}/%{name}/refcard*.pdf
 
 %changelog
+* Mon Feb 12 2018 Jajauma's Packages <jajauma@yandex.ru> - 6:4.2.1-4.7
+- Add more dependencies to octave-devel
+
 * Fri Feb 09 2018 Jajauma's Packages <jajauma@yandex.ru> - 6:4.2.1-4.6
 - Don't use broken _pkgdocdir on RHEL
 - Disable portaudio support (for now)
