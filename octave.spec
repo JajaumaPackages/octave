@@ -21,7 +21,7 @@
 Name:           octave
 Epoch:          6
 Version:        4.2.1
-Release:        5%{?rcver:.rc%{rcver}}%{?dist}
+Release:        6%{?rcver:.rc%{rcver}}%{?dist}
 Summary:        A high-level language for numerical computations
 Group:          Applications/Engineering
 License:        GPLv3+
@@ -189,6 +189,7 @@ Requires:       hdf5-devel
 Requires:       mesa-libGL-devel
 Requires:       mesa-libGLU-devel
 Requires:       ncurses-devel
+Requires:       pcre-devel
 Requires:       qrupdate-devel
 Requires:       readline-devel
 Requires:       suitesparse-devel
@@ -448,7 +449,7 @@ fi
 %{_docdir}/%{name}/refcard*.pdf
 
 %changelog
-* Mon Feb 12 2018 Jajauma's Packages <jajauma@yandex.ru> - 6:4.2.1-5
+* Mon Feb 12 2018 Jajauma's Packages <jajauma@yandex.ru> - 6:4.2.1-6
 - Add more dependencies to octave-devel
 - Bump Release
 
