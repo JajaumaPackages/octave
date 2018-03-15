@@ -20,8 +20,8 @@
 
 Name:           octave
 Epoch:          6
-Version:        4.2.1
-Release:        6%{?rcver:.rc%{rcver}}%{?dist}
+Version:        4.2.2
+Release:        1%{?rcver:.rc%{rcver}}%{?dist}
 Summary:        A high-level language for numerical computations
 Group:          Applications/Engineering
 License:        GPLv3+
@@ -82,6 +82,7 @@ BuildRequires:  fftw-devel
 BuildRequires:  flex
 BuildRequires:  fltk-devel
 BuildRequires:  ftgl-devel
+BuildRequires:  gcc-c++
 BuildRequires:  gcc-gfortran
 BuildRequires:  ghostscript
 BuildRequires:  gl2ps-devel
@@ -389,9 +390,7 @@ fi
 $Xorg -noreset +extension GLX +extension RANDR +extension RENDER -logfile ./xorg.log -config ./xorg.conf :99 &
 sleep 2
 export DISPLAY=:99
-# libinterp/dldfcn/__osmesa_print__.cc-tst is segfaulting
-# https://gcc.gnu.org/bugzilla/show_bug.cgi?id=78409
-make check || :
+make check
 
 %post
 /sbin/ldconfig
@@ -449,6 +448,9 @@ fi
 %{_docdir}/%{name}/refcard*.pdf
 
 %changelog
+* Thu Mar 15 2018 Jajauma's Packages <jajauma@yandex.ru> - 6:4.2.2-1
+- Update to 4.2.2
+
 * Mon Feb 12 2018 Jajauma's Packages <jajauma@yandex.ru> - 6:4.2.1-6
 - Add more dependencies to octave-devel
 - Bump Release
